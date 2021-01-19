@@ -431,7 +431,7 @@ where
                     value: None,
                     data: Some(call_data.clone()),
                 };
-                web3.eth().call(req, Some(block_id)).then(|result| {
+                web3.eth().call(req, Some(BlockNumber::Latest.into())).then(|result| {
                     // Try to check if the call was reverted. The JSON-RPC response for
                     // reverts is not standardized, the current situation for the tested
                     // clients is:
